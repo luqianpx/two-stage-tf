@@ -1,0 +1,40 @@
+# Evaluation specific configuration
+#   author: px
+#   date: 2021-03-09
+#   version: 1.0
+
+
+inherit_from: "configs/base_config.yaml"
+
+evaluation:
+  model_path: "path/to/best_model.ckpt"
+  test_data: "path/to/test_set.csv"
+  batch_size: 1
+  num_workers: 4
+  
+metrics:
+  calculate:
+    - accuracy
+    - precision
+    - recall
+    - specificity
+    - sensitivity
+    - f1_score
+    - auc_score
+    - confusion_matrix
+
+visualization:
+  gradcam:
+    enabled: true
+    num_samples: 5
+    overlay_alpha: 0.7
+  plots:
+    - confusion_matrix
+    - roc_curve
+    - metrics_summary
+
+output:
+  save_predictions: true
+  save_probabilities: true
+  save_gradcam: true
+  save_metrics: true

@@ -1,0 +1,24 @@
+# Base configuration shared across all stages
+#   author: px
+#   date: 2021-03-09
+#   version: 1.0
+
+paths:
+  data_dir: "/path/to/adni/data"
+  label_file: "/path/to/labels.csv"
+  output_dir: "outputs"
+  log_dir: "logs"
+
+data:
+  im_size: 128
+  num_classes: 2
+  num_workers: 4
+  batch_size: 32
+
+training:
+  seed: 42
+  max_epochs: 100
+  learning_rate: 0.001
+  momentum: 0.9
+  weight_decay: 0.0001
+  precision: 16  # Use mixed precision training

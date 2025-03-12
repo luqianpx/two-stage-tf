@@ -1,5 +1,3 @@
-# two-stage-tf
-
 # ADNI MRI Classification Project
 
 ## Overview
@@ -34,7 +32,6 @@ This repository provides a complete pipeline for self-supervised learning and cl
 - **`test_integration.py`** - End-to-end testing of the entire pipeline using pytest.
 
 ## Project Structure
-```
 .src
 ├── config.py # Configuration management
 ├── data_augmentation.py # 3D data augmentation
@@ -49,7 +46,6 @@ This repository provides a complete pipeline for self-supervised learning and cl
 ├── moco_pretrain.py # MoCo pretraining script
 ├── resnet3d.py # 3D ResNet architecture
 └── utils.py # Shared utilities
-```
 
 ## Usage 
 1. Pretraining with MoCo:

@@ -1,0 +1,45 @@
+#   MoCo pretraining specific configuration example
+#   author: px
+#   date: 2021-03-09
+#   version: 1.0
+
+inherit_from: "configs/base_config.yaml"
+
+moco:
+  arch: "resnet3d50"
+  feature_dim: 128
+  queue_size: 65536
+  moco_momentum: 0.999
+  temperature: 0.07
+  use_mlp: true
+
+augmentation:
+  rotation_range: 15
+  flip_prob: 0.5
+  scale_range: [0.9, 1.1]
+  translate_range: [-0.1, 0.1]
+  noise_std: 0.02
+  gamma_range: [0.8, 1.2]
+  elastic_alpha_range: [100, 200]
+  elastic_sigma_range: [9, 13]
+  brightness_range: [0.9, 1.1]
+  contrast_range: [0.9, 1.1]
+  p_augment: 0.5
+
+training:
+  batch_size: 32
+  learning_rate: 0.03
+  momentum: 0.9
+  weight_decay: 1e-4
+  max_epochs: 200
+  warmup_epochs: 10
+  
+optimizer:
+  type: "sgd"
+  momentum: 0.9
+  weight_decay: 1e-4
+
+scheduler:
+  type: "cosine"
+  warmup_epochs: 10
+  warmup_start_lr: 0.001
